@@ -1,4 +1,4 @@
-# Chapter 1 - Payment Methods
+# Chapter 1 - Payments ISO 8583 Messaging
 
 **ISO 8583** is the international standard for financial transaction card-originated messages. If you’ve ever swiped a credit card at a store or withdrawn cash from an ATM, an ISO 8583 message was the "language" used to authorize that transaction.
 
