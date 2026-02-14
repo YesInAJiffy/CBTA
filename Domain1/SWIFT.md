@@ -120,3 +120,233 @@ If you are in New Delhi and you send **$1,000** to a vendor in New York:
 | **Currency** | Foreign Currency (e.g., USD, EUR) | Domestic Currency (e.g., INR) |
 | **Asset/Liability** | **Asset** (It's their cash) | **Liability** (They owe it to the other bank) |
 
+# Correspondent vs Respondent Banks
+
+To understand a **Correspondent Bank**, think of it as a "financial ambassador."
+
+Since it is impossible for every bank in the world to have a physical building in every other country, they form **bilateral partnerships**. A Correspondent Bank is a bank that provides services (like wire transfers, currency exchange, and check clearing) on behalf of another bank in a different geographical location.
+
+The **Nostro** and **Vostro** accounts are the actual "ledger books" used to manage this relationship.
+
+---
+
+### 1. The Relationship Hierarchy
+
+In a typical international transaction, there are two roles:
+
+* **The Respondent Bank:** The "client" bank that needs help reaching a foreign market.
+* **The Correspondent Bank:** The "service provider" bank that has a local presence and access to the local clearing system in that foreign market.
+
+---
+
+### 2. How the Accounts Relate
+
+A correspondent relationship is officially established the moment a **Nostro/Vostro** account is opened. They are the same account, but the name depends on who is looking at it:
+
+| Term | Perspective | Role in the Relationship |
+| --- | --- | --- |
+| **Nostro** ("Ours") | **The Respondent Bank** | "This is our asset (cash) sitting in the correspondent's vault." |
+| **Vostro** ("Yours") | **The Correspondent Bank** | "This is a liability (money we owe) to the respondent bank." |
+
+**Relationship Example:**
+If **State Bank of India (SBI)** wants to help its customers send money to New York but doesn't have a massive US presence, it partners with **J.P. Morgan Chase**.
+
+* **J.P. Morgan** is the **Correspondent Bank**.
+* **SBI** is the **Respondent Bank**.
+* The USD account they share is **SBI's Nostro** and **J.P. Morgan's Vostro**.
+
+---
+
+### 3. The "Loro" Account: The Third Perspective
+
+There is a third term often used when a bank talks about a relationship *between two other banks*.
+
+* **Loro** means **"Theirs."**
+* **Usage:** If **HDFC Bank** is talking to **SBI** and refers to the money SBI has sitting at J.P. Morgan, HDFC calls it a **Loro Account**.
+* **Translation:** "Their account with them."
+
+---
+
+### 4. Why this matters for your Wire Transfers
+
+When you send an international wire from India to the US, the money doesn't actually travel across the ocean. Instead, a "relay race" happens using these accounts:
+
+1. **Instruction:** Your bank sends a **SWIFT message** to the Correspondent Bank.
+2. **Settlement:** The Correspondent Bank sees the message and **debits** your bank’s **Vostro** account (decreasing what they owe your bank).
+3. **Local Payout:** The Correspondent Bank then sends that money through the **local** US system (like Fedwire or ACH) to the final recipient.
+
+### Summary
+
+* **Correspondent Bank:** The **Entity** (The partner bank).
+* **Nostro/Vostro:** The **Account** (The tool they use to move the money).
+* **SWIFT:** The **Communication** (The instructions sent between them).
+
+# Intermediary Fees
+
+In 2026, the cost of sending an international wire is rarely just the "sending fee" your bank quotes you. Because money often travels through a **Correspondent/Intermediary Bank**, additional fees are deducted along the way.
+
+How these fees are handled depends on a specific **SWIFT Instruction Code** (OUR, SHA, or BEN) that the sender selects at the start.
+
+---
+
+### 1. The Intermediary Bank Fees
+
+If your bank in India doesn't have a direct relationship with the recipient's bank in the US, an **Intermediary Bank** acts as the bridge.
+
+* **Typical Fee:** Between **$10 and $50** per intermediary.
+* **The "Hidden" Deductible:** These fees are often deducted directly from the principal amount. If you send $1,000, the recipient might only get $970 because an intermediary took a $30 "handling fee" without an invoice.
+
+---
+
+### 2. The Three Fee Models (OUR, SHA, BEN)
+
+When you fill out a wire transfer form, you will usually see these three options. This tells the banks who should pay the intermediary and receiving costs.
+
+| Code | Name | Who Pays Intermediary/Receiving Fees? | Result for the Recipient |
+| --- | --- | --- | --- |
+| **OUR** | **Sender Pays** | **You (the Sender)** pay a higher upfront fee to your bank. | They receive the **Exact Amount** (e.g., $1,000 sent = $1,000 received). |
+| **SHA** | **Shared** | **Split.** You pay your bank's fee; they pay the rest. | They receive the amount **minus deductions** (e.g., $975 received). |
+| **BEN** | **Beneficiary Pays** | **The Recipient** pays everything. | They receive the amount **minus ALL fees** (e.g., $940 received). |
+
+> **Pro-Tip:** If you are paying a specific bill (like a university tuition or a visa fee), **always choose "OUR."** Otherwise, the recipient will be short by $20–$30, and your bill might be marked as "unpaid."
+
+---
+
+### 3. Typical 2026 Fee Breakdown (India to US)
+
+For a standard $1,000 transfer from an Indian bank to a US bank, here is the math you might see:
+
+1. **Sending Bank Fee (India):** ₹500 – ₹1,000 ($6 – $12)
+2. **Exchange Rate Markup:** 1% – 3% ($10 – $30 "hidden" in the rate)
+3. **Intermediary Fee:** $15 – $30 (Deducted if SHA/BEN)
+4. **Receiving Bank Fee (US):** $15 – $25 (Deducted if SHA/BEN)
+
+---
+
+### 4. How Correspondent Banking Relates to Fees
+
+The more "exotic" the currency or the smaller the bank, the more intermediaries are involved.
+
+* **Direct Relationship:** If HDFC has a Nostro account at Chase, there is **0 intermediary fee** because they talk directly.
+* **Indirect Relationship:** If a small rural credit union in India sends to a small bank in Kansas, the money might pass through **two or three** intermediary banks. Each one will take their own $15–$20 cut.
+
+### Summary
+
+The **Correspondent Bank** provides the "plumbing," and the **Nostro/Vostro** accounts provide the "water" (the funds). The **SWIFT codes (OUR/SHA/BEN)** are the instructions that decide who pays for the plumbing maintenance.
+
+# SWIFT MX Message Types
+
+The shift from **MT (Message Type)** to **MX (Message Type XML)** is a move from a 40-year-old "telegram" style of banking to a modern, data-rich digital format.
+
+As we are now in **February 2026**, the major transition deadline (November 2025) has passed. Most global banks have finished migrating their core payment instructions to MX. Here is the breakdown of what the MX message actually is and how it works.
+
+---
+
+### 1. The Anatomy of an MX Message
+
+Unlike the old MT messages, which used rigid tags like `:20:` or `:50K:`, MX messages are written in **XML**. This makes them flexible and readable by computers without needing special "banking-only" software.
+
+An MX message name (like **pacs.008.001.02**) tells you exactly what it is:
+
+* **Business Area (pacs):** The first four letters. *pacs* = Payments Clearing and Settlement.
+* **Message ID (008):** The core function. *008* is a Customer Credit Transfer.
+* **Variant (001):** Usually identifies a specific market flavor.
+* **Version (02):** The current technical version of the message.
+
+---
+
+### 2. The Four "Families" of MX
+
+In 2026, you will mostly encounter these four prefixes in bank communications:
+
+| Prefix | Full Name | Purpose | MT Equivalent |
+| --- | --- | --- | --- |
+| **pacs** | **Pa**yments **C**learing & **S**ettlement | Bank-to-bank movement of funds. | MT103, MT202 |
+| **pain** | **Pa**yment **In**itiation | A customer telling their bank to start a payment. | MT101 |
+| **camt** | **Ca**sh **M**anagemen**t** | Reporting, bank statements, and investigations. | MT940, MT950 |
+| **acmt** | **Ac**count **M**anagemen**t** | Opening or closing bank accounts. | New/N/A |
+
+---
+
+### 3. Why is MX better than MT?
+
+The move wasn't just about changing the file format; it was about the **data quality**.
+
+* **Structured Addresses:** In MT, an address was just 4 lines of text. In MX, it is broken into: *Street, Building Number, City, State, Country Code.* This prevents "Compliance False Positives" that used to delay wires.
+* **Extended Remittance:** MT was limited to 140 characters for a description. MX allows you to attach **thousands of characters**, including full invoice lists, tax breakdowns, and even links to digital documents.
+* **Ultimate Parties:** MX allows the message to identify the *actual* original sender and the *actual* final receiver, even if five different banks are involved in the middle.
+
+---
+
+### 4. The 2026 Reality: "Truncation" and "Hybrid Addresses"
+
+Even though we are past the 2025 deadline, you should be aware of two things happening right now in early 2026:
+
+1. **Reporting Delay:** While *Payments* (pacs) moved in 2025, many banks (like J.P. Morgan and Citi) have deferred **Reporting** (camt.053 statements) until **late 2026**. This means your bank statement might still look like the old format for a few more months.
+2. **The Address Deadline:** Starting in **November 2026**, SWIFT will stop accepting "Unstructured" addresses entirely. Banks are currently in a "Hybrid" phase, where they are forcing clients to start providing building numbers and street names separately.
+
+---
+
+### Summary Table
+
+| Feature | MT (Legacy) | MX (Modern 2026) |
+| --- | --- | --- |
+| **Format** | Text / Swift-FIN | XML |
+| **Characters** | Restricted (Latin only) | Unlimited (Supports Unicode/Local Languages) |
+| **Data Structure** | Flat / Unstructured | Highly Structured / Granular |
+| **Interoperability** | Low (Proprietary) | High (Standardized across 70+ countries) |
+
+# 4 Payment families of MX
+
+While there are dozens of MX message types, you really only need to know a handful to understand 90% of the world's financial traffic in 2026.
+
+The **pacs** and **camt** families are the most active "workhorses," as they handle the actual movement and reporting of money between banks.
+
+---
+
+### 1. The `pacs` Family (The Workhorses)
+
+These are used **bank-to-bank**. Every time a wire moves through the Fed or SWIFT, one of these is flying through the air.
+
+| Message ID | Use Case | MT Equivalent |
+| --- | --- | --- |
+| **pacs.008** | **Customer Credit Transfer.** This is the "standard wire." Used when you send money to another person or business. | MT103 |
+| **pacs.009** | **Financial Institution Transfer.** Used when one bank pays another bank (e.g., settling a debt or moving their own liquidity). | MT202 |
+| **pacs.002** | **Payment Status Report.** The "receipt" or "error message." If a payment is rejected or accepted, this message carries the reason code. | MT199 / MT299 |
+| **pacs.004** | **Payment Return.** Used to "undo" a payment and send the funds back to the original sender. | New (No direct MT) |
+
+---
+
+### 2. The `camt` Family (The Reporting)
+
+These are used for **reporting and investigations**. This is what allows your accounting software to "see" your bank balance.
+
+| Message ID | Use Case | MT Equivalent |
+| --- | --- | --- |
+| **camt.053** | **Bank Statement.** The "End of Day" statement. This is the master file used for reconciliation. | MT940 / MT950 |
+| **camt.052** | **Intraday Report.** A "sneak peek" at your balance in the middle of the day. | MT942 |
+| **camt.054** | **Debit/Credit Notification.** A real-time alert that a specific payment just hit (or left) your account. | MT900 / MT910 |
+
+---
+
+### 3. The `pain` Family (The Initiation)
+
+These are used **customer-to-bank**. You usually use these if you are a corporate treasurer uploading a large file of payments to your bank.
+
+* **pain.001:** The "Instruction." You send this to your bank to say, "Please pay these 100 vendors." (Replaces MT101).
+* **pain.002:** The "Feedback." The bank sends this back to you to say, "We received your file; 98 payments were okay, 2 were rejected."
+
+---
+
+### 4. Which one is "King"?
+
+If you only remember one, make it **pacs.008**.
+It is the most common message in the world because it represents the fundamental act of **one person paying another person**. In the 2026 banking world, almost everything else exists just to support or report on the **pacs.008**.
+
+### Summary of Popularity (2026)
+
+1. **pacs.008** (The Actual Payment) — **High Volume**
+2. **pacs.002** (The Status Update) — **High Volume**
+3. **camt.053** (The Daily Statement) — **Daily Routine**
+4. **pain.001** (The Bulk Upload) — **Common for Businesses**
+
