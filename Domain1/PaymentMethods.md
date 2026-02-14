@@ -73,3 +73,41 @@ You may hear that ISO 8583 is "dying," but that’s an exaggeration.
 
 ISO 8583 is a highly optimized, linear messaging format. It allows a bank in New York to instantly understand a transaction request coming from a street vendor in New Delhi, even if they use completely different hardware.
 
+# Chapter 2 - Payments ISO 8583 Messaging Vs ISO20022
+
+**ISO 20022 did not replace ISO 8583.** Instead, it replaced the **legacy Fedwire (FAIM)** and **SWIFT (MT)** formats used for large-scale, bank-to-bank transfers. In the world of finance, these standards live in two different "neighborhoods."
+
+---
+
+### 1. The "Neighborhood" Difference
+
+Think of these as two different types of transport:
+
+* **ISO 8583 (The Sports Car):** It is built for **speed and high volume**. It is still the king of retail. Every time you buy a coffee or use an ATM, ISO 8583 is doing the work. It is small, fast, and does exactly one job: authorizing card transactions.
+* **ISO 20022 (The Semi-Truck):** It is built for **capacity and detail**. It is used for the "heavy lifting" like billion-dollar corporate wires, cross-border settlements, and payroll. It carries massive amounts of data (invoices, addresses, tax IDs) that ISO 8583 simply cannot hold.
+
+### 2. What exactly did the Fed replace in July 2025?
+
+When the Fed migrated, they replaced their **proprietary wire format (FAIM)**.
+
+* **Before July 2025:** If a bank wanted to send a wire, they used a format called FAIM (or SWIFT MT for international). These were like "old telegrams"—short, text-only, and messy.
+* **After July 2025:** They must use the **ISO 20022 (XML)** format. This is like moving from a telegram to a detailed digital form.
+
+### 3. Will ISO 20022 *eventually* replace ISO 8583?
+
+As of February 2026, there is a movement in that direction, but we aren't there yet.
+
+* **The Goal:** To have one single language for all finance. ISO 20022 has a "card" version (called **ATICA**) designed to replace ISO 8583.
+* **The Reality:** Visa and Mastercard have billions of dollars invested in ISO 8583 infrastructure. Moving them is like trying to replace every electrical outlet in the world simultaneously. It will likely take another decade before ISO 20022 becomes the standard for your daily card swipe.
+
+---
+
+### Summary Table: 2026 Status
+
+| Feature | ISO 8583 | ISO 20022 |
+| --- | --- | --- |
+| **Primary Use** | **Retail:** Credit cards, POS, ATMs. | **Wholesale:** Fedwire, SWIFT, Cross-border. |
+| **Data Capacity** | Low (Small, fast bits). | High (Rich, structured XML). |
+| **Fed Status** | **Still Active** for card networks. | **Mandatory** for Fedwire since July 2025. |
+| **Speed** | Milliseconds (Authorization). | Seconds to Minutes (Settlement). |
+
