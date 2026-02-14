@@ -62,3 +62,61 @@ One of the biggest complaints about SWIFT was that money would "disappear" for d
 | **Format** | **ISO 20022** (as of 2026) | **ISO 20022** (as of 2025) |
 | **Speed** | Minutes to Days | Real-time / Same-day |
 
+# Nostro Vostro Accounts
+
+As we move into international wires, **Nostro** and **Vostro** are the specialized accounting terms banks use to keep track of the money they hold for each other across borders.
+
+They actually refer to the **exact same account**, but the name changes depending on which bank is talking.
+
+---
+
+### 1. The Literal Meaning
+
+The terms come from Italian and Latin, dating back to the 14th-century Mediterranean merchants:
+
+* **Nostro** means **"Ours"** ("Our account with you").
+* **Vostro** means **"Yours"** ("Your account with us").
+
+---
+
+### 2. The Perspective: Two Sides of One Ledger
+
+Imagine two banks: **HDFC Bank (India)** and **J.P. Morgan Chase (USA)**. HDFC wants to be able to pay people in US Dollars, so they open a USD account *inside* J.P. Morgan in New York.
+
+| Bank | How they refer to the account | The logic |
+| --- | --- | --- |
+| **HDFC (India)** | **Nostro Account** | "This is **our** money, but it is sitting in your bank in New York." |
+| **J.P. Morgan (USA)** | **Vostro Account** | "This is **your** money, and we are holding it for you in our bank." |
+
+---
+
+### 3. Why are these accounts necessary?
+
+Banks don't literally ship boxes of cash to each other when you send a wire. Instead, they "settle" the debt by adjusting the balances in these accounts.
+
+* **Global Reach:** Your local bank doesn't need a building in every country. They just need a Nostro account with a "Correspondent Bank" that already has a building there.
+* **Currency Availability:** By keeping a Nostro account in USD, a bank in India always has "pre-funded" dollars ready to go. They don't have to go to the open market to buy dollars for every single small customer wire.
+* **Speed:** When a bank uses its Nostro account to pay a vendor, it's essentially a local transfer within the foreign country’s banking system (e.g., from one US bank to another), which is much faster than an "international" move.
+
+---
+
+### 4. Real-World Example: Paying your US Vendor
+
+If you are in New Delhi and you send **$1,000** to a vendor in New York:
+
+1. You pay your Indian bank in **Rupees**.
+2. Your Indian bank sends a **SWIFT message** to its correspondent bank in the US (where it has a **Nostro** account).
+3. The US correspondent bank sees the message and says, *"Okay, I will take $1,000 out of HDFC's **Vostro** account and give it to the vendor's bank here in New York."*
+4. **Result:** The money never actually crossed the ocean; only the "instruction" (the SWIFT message) did.
+
+---
+
+### 5. Summary: Key Differences
+
+| Feature | Nostro Account | Vostro Account |
+| --- | --- | --- |
+| **Translation** | "Ours" | "Yours" |
+| **Account Owner** | The Domestic Bank (sending the money) | The Foreign Bank (holding the money) |
+| **Currency** | Foreign Currency (e.g., USD, EUR) | Domestic Currency (e.g., INR) |
+| **Asset/Liability** | **Asset** (It's their cash) | **Liability** (They owe it to the other bank) |
+
