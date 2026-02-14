@@ -111,3 +111,65 @@ As of February 2026, there is a movement in that direction, but we aren't there 
 | **Fed Status** | **Still Active** for card networks. | **Mandatory** for Fedwire since July 2025. |
 | **Speed** | Milliseconds (Authorization). | Seconds to Minutes (Settlement). |
 
+#Chapter 3 Interexchange Fees
+
+An **Interchange Fee** is the "swipe fee" paid by a merchant's bank (the acquirer) to the customer’s bank (the issuer) every time a credit or debit card is used.
+
+While the customer never sees this fee, it is the reason some small businesses have a "$10 minimum" for credit card purchases. In the complex plumbing of a transaction, interchange is the largest portion of the total "Merchant Discount Rate" (the total fee a store pays to accept cards).
+
+---
+
+### 1. Who gets the money?
+
+Contrary to popular belief, the fee doesn't mostly go to Visa or Mastercard.
+
+* **The Issuer (90%):** Your bank (e.g., Chase, Amex, Wells Fargo) gets the lion's share. This money covers their risk of fraud, the cost of the interest-free grace period, and—most importantly—the **rewards/points** you earn.
+* **The Network (10%):** Visa or Mastercard takes a small "switch fee" or "assessment fee" for providing the infrastructure (the ISO 8583 rails we discussed).
+
+---
+
+### 2. The Three Main Components
+
+Interchange isn't a single flat rate; it is a calculation based on three variables:
+
+#### **A. The Card Type (The "Who")**
+
+* **Debit vs. Credit:** Debit fees are usually capped (around **0.05% + $0.21** for large banks due to the Durbin Amendment). Credit fees are much higher (often **1.5% to 2.5%**).
+* **Rewards Tier:** A "Basic" card costs the merchant less. A "Premium" card (like a Chase Sapphire Reserve or Amex Platinum) has a much higher interchange fee because the merchant is effectively subsidizing your travel points.
+
+#### **B. The Merchant Category (The "Where")**
+
+The IRS and Card Networks use **MCC Codes** (Merchant Category Codes).
+
+* **High Risk/High Margin:** Luxury jewelry stores often pay higher rates.
+* **Low Margin/Public Good:** Charities, utilities, and large grocery stores often get "Incentive Rates" which are much lower.
+
+#### **C. Transaction Method (The "How")**
+
+* **Card-Present (CP):** Swiping or "dipping" the chip in person. This is the lowest fee because the risk of fraud is lower.
+* **Card-Not-Present (CNP):** Online shopping or phone orders. These have the **highest interchange fees** because the risk of a stolen card number is much higher.
+
+---
+
+### 3. A Typical Fee Breakdown (Example)
+
+If you buy a **$100** jacket at a local boutique with a premium Rewards Credit Card, the merchant might pay a total fee of **$2.80**. That $2.80 is split like this:
+
+| Component | Amount | Where it goes |
+| --- | --- | --- |
+| **Interchange Fee** | **$2.10 (2.1%)** | To your bank (The Issuer) |
+| **Assessment Fee** | **$0.13 (0.13%)** | To the Network (Visa/MC) |
+| **Markup/Processing** | **$0.57** | To the merchant's bank (The Acquirer) |
+| **Total Cost** | **$2.80** | **Merchant receives $97.20** |
+
+---
+
+### 4. 2026 Regulatory Landscape
+
+As of February 2026, interchange fees are under heavy fire:
+
+* **The Credit Card Competition Act:** There is ongoing legislative pressure to force banks to offer a second routing network (besides Visa/MC), which could lower these fees.
+* **Surcharging Rules:** More states have recently legalized "Surcharging," where a merchant can legally pass that 2-3% fee directly to you at the register if you choose to use a credit card instead of cash or debit.
+
+> **Pro-Tip:** This is why "Cash Back" and "Travel Points" exist. They are literally funded by the interchange fees that merchants pay. If you use a "1% cash back" card, the bank is just giving you a slice of the 2% interchange fee they collected from the store.
+
